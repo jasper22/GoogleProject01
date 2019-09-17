@@ -1,0 +1,3 @@
+    "@google-cloud/debug-agent": "^4.0.3",
+    "@google-cloud/trace-agent": "^4.2.0",
+    "@google-cloud/profiler": "^2.0.2",
