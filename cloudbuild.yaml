@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/GoogleTest01/showmovies', '.']
+  args: ['build', '-t', 'gcr.io/gtest-01/showmovies', '.']
   timeout: 500s
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/GoogleTest01/showmovies']
+  args: ['push', 'gcr.io/gtest-01/showmovies']
