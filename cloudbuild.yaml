@@ -4,3 +4,5 @@ steps:
   timeout: 500s
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/gtest-01/showmovies']
+- name: "gcr.io/cloud-builders/gcloud"
+  args: ["app", "deploy", "deploy/app.yaml"]
