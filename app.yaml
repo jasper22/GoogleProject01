@@ -1,0 +1,3 @@
+# This should notice app engine that we dploy Docker (custom runtime) container
+runtime: custom
+env: flex
