@@ -1,8 +1,8 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/gtest-01/showmovies', '.']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/$BRANCH_NAME/$COMMIT_SHA', '.']
   timeout: 500s
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/gtest-01/showmovies']
+  args: ['push', 'gcr.io/$PROJECT_ID/$BRANCH_NAME/$COMMIT_SHA']
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy", "deploy/app.yaml"]
