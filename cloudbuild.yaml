@@ -17,6 +17,5 @@ steps:
 - name: "gcr.io/cloud-builders/gcloud"
   args: [
           "app", "deploy", "deploy/app.yaml", 
-          "--image-url=gcr.io/$PROJECT_ID/$BRANCH_NAME:latest", 
-          "--verbosity=info"
+          "--image-url=gcr.io/$PROJECT_ID/$BRANCH_NAME:latest"
         ]
