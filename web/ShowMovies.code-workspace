@@ -2,7 +2,7 @@
 	"folders": [
 		{
 			"name" : "Angular",
-			"path": "ShowMovies"
+			"path": "show-movies"
 		}
 	],
 	"settings": {

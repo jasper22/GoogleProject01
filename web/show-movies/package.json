@@ -1,7 +1,20 @@
 {
   "name": "show-movies",
-  "version": "0.0.0",
-  "license": "MIT",
+  "version": "1.0.0",
+  "author": {
+    "name": "Aleksand",
+    "email": "jjasper22@gmail.com"
+  },
+  "description": "Test application for Google Services",
+  "homepage": "https://quick-dev.co.il",
+  "bugs": {
+    "url": "https://github.com/jasper22/google-project-01/issues"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/jasper22/google-project-01.git"
+  },
+  "cpu" : [ "x64" ],
   "scripts": {
     "ng": "ng",
     "nx": "nx",
@@ -27,7 +40,6 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help"
   },
-  "private": true,
   "dependencies": {
     "@nrwl/angular": "8.5.0",
     "@angular/animations": "^8.2.0",
