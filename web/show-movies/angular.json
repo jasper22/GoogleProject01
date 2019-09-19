@@ -21,8 +21,15 @@
               "apps/show-movies/src/favicon.ico",
               "apps/show-movies/src/assets"
             ],
-            "styles": ["apps/show-movies/src/styles.css"],
-            "scripts": []
+            "styles": [
+              "node_modules/@clr/icons/clr-icons.min.css",
+              "node_modules/@clr/ui/clr-ui.min.css",
+              "apps/show-movies/src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/@webcomponents/custom-elements/custom-elements.min.js",
+              "node_modules/@clr/icons/clr-icons.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -80,7 +87,10 @@
               "apps/show-movies/tsconfig.app.json",
               "apps/show-movies/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/show-movies/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/show-movies/**"
+            ]
           }
         },
         "test": {
@@ -114,8 +124,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/show-movies-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/show-movies-e2e/**"]
+            "tsConfig": [
+              "apps/show-movies-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/show-movies-e2e/**"
+            ]
           }
         }
       }
@@ -133,7 +148,10 @@
               "libs/ui/tsconfig.lib.json",
               "libs/ui/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/ui/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui/**"
+            ]
           }
         },
         "test": {
