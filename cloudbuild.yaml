@@ -6,9 +6,7 @@ steps:
     '--cache-from', 'gcr.io/$PROJECT_ID/$BRANCH_NAME:latest',
     '.']
   timeout: 500s
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/$BRANCH_NAME:latest']
-  images: ['gcr.io/$PROJECT_ID/$BRANCH_NAME:latest']
+images: ['gcr.io/$PROJECT_ID/$BRANCH_NAME:latest']
 - name: 'gcr.io/cloud-builders/gke-deploy:stable'
   args:
   - 'run'
