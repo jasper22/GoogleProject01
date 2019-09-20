@@ -3,7 +3,7 @@
 # We label our stage as 'builder'
 FROM node:current-alpine as builder
 
-COPY ./ShowMovies/package*.json ./
+COPY ./show-movies/package*.json ./
 
 RUN npm config set depth 0 && npm cache clean --force
 
@@ -12,7 +12,7 @@ RUN npm i && mkdir /ng-app && cp -R ./node_modules ./ng-app
 
 WORKDIR /ng-app
 
-COPY ./ShowMovies ./
+COPY ./show-movies ./
 
 ## Build the angular app in production mode and store the artifacts in dist folder
 RUN $(npm bin)/ng build --prod --build-optimizer
@@ -29,7 +29,7 @@ COPY nginx/default.conf /etc/nginx/conf.d/
 RUN rm -rf /usr/share/nginx/html/*
 
 ## From 'builder' stage copy over the artifacts in dist folder to default nginx public folder
-COPY --from=builder /ng-app/dist/ShowMovies /usr/share/nginx/html/
+COPY --from=builder /ng-app/show-movies/dist/apps/show-movies /usr/share/nginx/html/
 
 CMD ["nginx", "-g", "daemon off;"]
 
