@@ -20,5 +20,6 @@ steps:
           "app", "deploy", "web/deploy/app.yaml", 
           "--image-url=gcr.io/$PROJECT_ID/$BRANCH_NAME:latest",
           "--stop-previous-version",
-          "--version=staging"
+          "--version=staging",
+          "--promote"
         ]
