@@ -10,6 +10,11 @@
   "bugs": {
     "url": "https://github.com/jasper22/google-project-01/issues"
   },
+  "engines": {
+    "node": ">=10.15.3",
+    "npm": ">=6",
+    "yarn": ">=1.12.1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jasper22/google-project-01.git"
