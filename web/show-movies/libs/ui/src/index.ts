@@ -5,6 +5,6 @@ export * from './lib/about/about.component';
 export * from './lib/user-preferences/user-preferences.component';
 export * from './lib/log-out/log-out.component';
 
-export * from './lib/top-alert-info/top-alert-info.component';
+export * from './lib/top-alert/top-alert.component';
 
 export * from './lib/ui.module';

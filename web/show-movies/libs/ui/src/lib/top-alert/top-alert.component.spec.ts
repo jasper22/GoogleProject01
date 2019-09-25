@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TopAlertInfoComponent } from './top-alert-info.component';
+import { TopAlertComponent } from './top-alert.component';
 
-describe('TopAlertInfoComponent', () => {
-  let component: TopAlertInfoComponent;
-  let fixture: ComponentFixture<TopAlertInfoComponent>;
+describe('TopAlertComponent', () => {
+  let component: TopAlertComponent;
+  let fixture: ComponentFixture<TopAlertComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TopAlertInfoComponent ]
+      declarations: [ TopAlertComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TopAlertInfoComponent);
+    fixture = TestBed.createComponent(TopAlertComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

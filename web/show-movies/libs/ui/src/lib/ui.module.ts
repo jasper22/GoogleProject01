@@ -9,7 +9,7 @@ import { DownloadsComponent } from './downloads/downloads.component';
 import { AboutComponent } from './about/about.component';
 import { UserPreferencesComponent } from './user-preferences/user-preferences.component';
 import { LogOutComponent } from './log-out/log-out.component';
-import { TopAlertInfoComponent } from './top-alert-info/top-alert-info.component';
+import { TopAlertComponent } from './top-alert/top-alert.component';
 
 @NgModule({
   imports: [
@@ -18,7 +18,7 @@ import { TopAlertInfoComponent } from './top-alert-info/top-alert-info.component
             ClrIconModule,
             BrowserAnimationsModule
   ],
-  declarations: [PageNotFoundComponent, DashboardComponent, DownloadsComponent, AboutComponent, UserPreferencesComponent, LogOutComponent, TopAlertInfoComponent],
+  declarations: [PageNotFoundComponent, DashboardComponent, DownloadsComponent, AboutComponent, UserPreferencesComponent, LogOutComponent, TopAlertComponent],
   exports: [
               ClarityModule,
               ClrIconModule,
@@ -28,7 +28,7 @@ import { TopAlertInfoComponent } from './top-alert-info/top-alert-info.component
               AboutComponent,
               UserPreferencesComponent,
               LogOutComponent,
-              TopAlertInfoComponent
+              TopAlertComponent
   ]
 })
 export class UiModule {}

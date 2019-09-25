@@ -1,9 +1,9 @@
 <div class="main-container">
-  <top-alert-info></top-alert-info>
+  <top-alert [message]="alertMessage" [alertType]="alertType"></top-alert>
   <header class="header header-4">
       <div class="branding">
+          <clr-icon shape="star" size="30" style="margin: 0 auto;top: 50%;transform: translateY(40%);"></clr-icon>
           <a [routerLink]="['/dashboard']" routerLinkActive=""  class="nav-link">
-              <clr-icon shape="star" size="30"></clr-icon>
               <span class="title">Show movies</span>
           </a>
       </div>
@@ -20,7 +20,7 @@
           </button>
           <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
               <a [routerLink]="['/about']" routerLinkActive="active"  clrDropdownItem>About</a>
-              <a [routerLink]="['/user-prefernces']" routerLinkActive="active"  clrDropdownItem>Preferences</a>
+              <a [routerLink]="['/user-preferences']" routerLinkActive="active"  clrDropdownItem>Preferences</a>
               <a [routerLink]="['/log-out']" routerLinkActive="active"  clrDropdownItem>Log out</a>
           </clr-dropdown-menu>
       </clr-dropdown>

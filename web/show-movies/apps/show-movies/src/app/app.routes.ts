@@ -23,7 +23,7 @@ import {
     component: AboutComponent
   },
   {
-    path: 'user-prefernces',
+    path: 'user-preferences',
     component: UserPreferencesComponent
   },
   {
