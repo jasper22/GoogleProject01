@@ -3,10 +3,10 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [
           'build',
-          '-f', 'web/Dockerfile', 
+          '-f', 'build/Dockerfile', 
           '-t', 'gcr.io/$PROJECT_ID/$BRANCH_NAME:latest', 
           '--cache-from', 'gcr.io/$PROJECT_ID/$BRANCH_NAME:latest',
-          '/web'
+          'web/'
         ]
   timeout: 500s
 
@@ -17,7 +17,7 @@ steps:
 # Deploy to App Engine
 - name: "gcr.io/cloud-builders/gcloud"
   args: [
-          "app", "deploy", "web/deploy/app.yaml", 
+          "app", "deploy", "app.yaml", 
           "--image-url=gcr.io/$PROJECT_ID/$BRANCH_NAME:latest",
           "--stop-previous-version",
           "--version=staging",

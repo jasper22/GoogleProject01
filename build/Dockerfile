@@ -3,8 +3,8 @@
 # We label our stage as 'builder'
 FROM node:current-alpine as builder
 
-COPY ./show-movies/package*.json ./
-COPY ./show-movies/.npmrc ./
+COPY ../web/package*.json ./
+COPY ../web/.npmrc ./
 #RUN npm config set depth 0 && npm cache clean --force
 
 ## Storing node modules on a separate layer will prevent unnecessary npm installs at each build
@@ -12,7 +12,7 @@ RUN npm i && mkdir /ng-app && cp -R ./node_modules ./ng-app
 
 WORKDIR /ng-app
 
-COPY ./show-movies ./
+COPY ../web ./
 
 ## Build the angular app in production mode and store the artifacts in dist folder
 RUN $(npm bin)/ng build --prod --build-optimizer
@@ -23,7 +23,7 @@ RUN $(npm bin)/ng build --prod --build-optimizer
 FROM nginx:1.13.3-alpine
 
 ## Copy our default nginx config
-COPY nginx/default.conf /etc/nginx/conf.d/
+COPY ../configs/nginx-default.conf /etc/nginx/conf.d/default.conf
 
 ## Remove default nginx website
 RUN rm -rf /usr/share/nginx/html/*
