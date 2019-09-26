@@ -1,0 +1,1 @@
+docker.exe build ../ -f ../build/Dockerfile
