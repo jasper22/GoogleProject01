@@ -51,6 +51,7 @@ TODO
 * [GO](https://golang.org/)
 * [Angular](https://angular.io/)
 * [Project layout](https://github.com/golang-standards/project-layout)
+* [Hydra](https://github.com/ory/hydra)
 
 ## Contributing
 
