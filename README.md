@@ -9,11 +9,30 @@ GO based server that serve Angular application
 [![Go Report Card](https://goreportcard.com/badge/github.com/jasper22/google-project-01)](https://goreportcard.com/report/github.com/jasper22/google-project-01)
 
 ## Getting Started
+   
+   * Clone repository
 
-TODO
+    ```
+    git clone --recurse-submodules https://github.com/jasper22/google-project-01.git
+    ```
+   
+   * Build Docker image
+
+   ```
+   scripts\build-docker.cmd (on Windows platform) or script\build-docker.sh (on Linux platform)
+   ```
+
+   * Run Docker image
+
+   ```
+   docker run --detach --rm -p 8080:8080 show-movies@latest
+   ```
+
+   * Open your favorite browser to: [http://localhost:8080](http://localhost:8080)
+
 ### Prerequisites
 
-#### Git (latest)
+#### Git
 
    Linux:
    ```
@@ -25,7 +44,7 @@ TODO
    Download from [https://git-scm.com/](https://git-scm.com/)
 
 
-#### Go v1.13
+#### Go
 
    Linux:
    Follow the instructions from official web site: [golang.org](https://golang.org/doc/install#tarball)
@@ -52,16 +71,15 @@ TODO
    npm i -g @angular/cli@latest
    ```
 
-### Installing
+#### Docker
 
-    1. Clone repository
+   Linux:
 
-    ```
-    git clone --recurse-submodules https://github.com/jasper22/google-project-01.git
-    ```
+   Follow the instruction on official site: [docker.com](https://docs.docker.com/v17.09/engine/installation/linux/docker-ce/ubuntu/)
 
+   Windows:
 
-TODO
+   Follow the instruction on official site: [docker.com](https://hub.docker.com/?overlay=onboarding)
 
 ## Running the tests
 
