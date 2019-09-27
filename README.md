@@ -12,10 +12,10 @@ GO based server that serve Angular application
    
    * Clone repository
 
-    ```
-    git clone --recurse-submodules https://github.com/jasper22/google-project-01.git
-    ```
-   
+   ``` 
+   git clone --recurse-submodules https://github.com/jasper22/google-project-01.git
+   ```
+
    * Build Docker image
 
    ```
@@ -57,13 +57,17 @@ GO based server that serve Angular application
 #### Angular 8
 
    1. Install node.js
+
         Linux: 
+
         a. Install with snap: [nodejs.com](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
     
         b. Install with tarball: [github.com/nodesource](https://github.com/nodesource/distributions/blob/master/README.md)
 
        Windows:
+
        Follow the instructions from official web page: [nodejs.com](https://nodejs.org/en/download/package-manager/#windows) 
+
 
    2. Install Angular CLI globally
 
@@ -101,6 +105,9 @@ TODO
 
 * [GO](https://golang.org/)
 * [Angular](https://angular.io/)
+* [Hydra](https://github.com/ory/hydra)
+
+* [Docker](http://docker.com)
 * [Project layout](https://github.com/golang-standards/project-layout)
 
 ## Contributing
