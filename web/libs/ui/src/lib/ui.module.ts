@@ -21,7 +21,18 @@ import { AuthErrorComponent } from './auth-error/auth-error.component';
             ClrIconModule,
             BrowserAnimationsModule
   ],
-  declarations: [PageNotFoundComponent, DashboardComponent, DownloadsComponent, AboutComponent, UserPreferencesComponent, LogOutComponent, TopAlertComponent, LoginComponent, ConsentComponent, AuthErrorComponent],
+  declarations: [
+                  PageNotFoundComponent,
+                  DashboardComponent,
+                  DownloadsComponent,
+                  AboutComponent,
+                  UserPreferencesComponent,
+                  LogOutComponent,
+                  TopAlertComponent,
+                  LoginComponent,
+                  ConsentComponent,
+                  AuthErrorComponent
+  ],
   exports: [
               ClarityModule,
               ClrIconModule,
