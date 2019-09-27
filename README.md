@@ -13,19 +13,52 @@ GO based server that serve Angular application
 TODO
 ### Prerequisites
 
-TODO
+#### Git (latest)
 
-```
-TODO
-```
+   Linux:
+   ```
+   apt-get install git
+   ```
+   
+   Windows:
+
+   Download from [https://git-scm.com/](https://git-scm.com/)
+
+
+#### Go v1.13
+
+   Linux:
+   Follow the instructions from official web site: [golang.org](https://golang.org/doc/install#tarball)
+   
+   (I tryed to use `snap install go` on Ubuntu - sometimes it cause a lot of strange errors in package installing)
+
+   Windows:
+   Follow the instrations on official web site: [golang.org](https://golang.org/doc/install#windows)
+
+#### Angular 8
+
+   1. Install node.js
+        Linux: 
+        a. Install with snap: [nodejs.com](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
+    
+        b. Install with tarball: [github.com/nodesource](https://github.com/nodesource/distributions/blob/master/README.md)
+
+       Windows:
+       Follow the instructions from official web page: [nodejs.com](https://nodejs.org/en/download/package-manager/#windows) 
+
+   2. Install Angular CLI globally
+
+   ```
+   npm i -g @angular/cli@latest
+   ```
 
 ### Installing
 
-TODO
+    1. Clone repository
 
-```
-TODO
-```
+    ```
+    git clone --recurse-submodules https://github.com/jasper22/google-project-01.git
+    ```
 
 
 TODO
