@@ -3,7 +3,7 @@
 GO based server that serve Angular application
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![GitHub license](https://img.shields.io/github/license/jasper22/google-project-01?style=plastic)](https://github.com/jasper22/google-project-01/blob/master/LICENSE)
-[![Languages used](https://img.shields.io/github/languages/count/jasper22/google-project-01?style=plastic)]
+[![Languages used](https://img.shields.io/github/languages/count/jasper22/google-project-01?style=plastic)](https://img.shields.io/github/languages/count/jasper22/google-project-01?style=plastic)
 [![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://github.com/jasper22/google-project-01/issues/)
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/jasper22/google-project-01/)
 [![Go Report Card](https://goreportcard.com/badge/github.com/jasper22/google-project-01)](https://goreportcard.com/report/github.com/jasper22/google-project-01)
