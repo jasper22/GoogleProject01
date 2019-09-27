@@ -106,6 +106,7 @@ TODO
 * [GO](https://golang.org/)
 * [Angular](https://angular.io/)
 * [Hydra](https://github.com/ory/hydra)
+* [VS Code insiders](https://github.com/microsoft/vscode)
 
 * [Docker](http://docker.com)
 * [Project layout](https://github.com/golang-standards/project-layout)
