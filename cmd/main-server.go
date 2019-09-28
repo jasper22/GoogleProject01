@@ -9,7 +9,7 @@ import (
 	"syscall"
 	"time"
 
-	server "github.com/google-project-01/internal/main_server"
+	"github.com/jasper22/google-project-01/internal/main_server"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-package main_server
+package server
 
 import (
 	"github.com/gin-contrib/static"
