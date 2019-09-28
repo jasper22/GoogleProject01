@@ -1,19 +1,15 @@
 {
 	"folders": [
 		{
-			"name": "Main server",
 			"path": "cmd"
 		},
 		{
-			"name": "Configs",
 			"path": "configs"
 		},
 		{
-			"name": "Internal",
 			"path": "internal"
 		},
 		{
-			"name": "Deployments",
 			"path": "deployments"
 		}
 	],
@@ -25,5 +21,18 @@
 			"**/.DS_Store": true,
 			"**/node_modules": true,
 			"**/dist" : true
+	},
+	"launch": {
+		"configurations": [{
+			"name": "Launch MainServer and Hydra",
+			"type": "go",
+			"preLaunchTask": "StartHydra",
+			"request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder:cmd}/main-server.go",
+            "env": {},
+            "args": []
+		}],
+		"compounds": []
 	}
 }

@@ -8,6 +8,7 @@
             "name": "Launch",
             "type": "go",
             "request": "launch",
+            "preLaunchTask": "StartHydra",
             "mode": "auto",
             "program": "${workspaceFolder}/main-server.go",
             "env": {},

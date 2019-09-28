@@ -1,0 +1,35 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "BuildHydra",
+            "type": "shell",
+            "command": "go build -i -v ${workspaceFolder}/../internal/hydra/main.go",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "focus": true,
+                "revealProblems": "onProblem"
+            },
+            "problemMatcher": "$go"
+        },
+        {
+            "label": "StartHydra",
+            "type": "shell",
+            "command": "${workspaceFolder}/../internal/hydra/hydra serve all --config ${workspaceFolder}/../configs/hydra-config.yaml --skip-tls-verify",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "focus": true,
+                "showReuseMessage": true,
+                "revealProblems": "onProblem"
+            },
+            "dependsOn": "BuildHydra",
+            "problemMatcher": [
+                "$go"
+            ]
+        }
+    ]
+}
