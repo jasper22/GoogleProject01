@@ -40,3 +40,4 @@ yarn-error.log
 .bazelrc.user
 
 internal/hydra
+cmd/main
