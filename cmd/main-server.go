@@ -9,18 +9,12 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/gin-contrib/static"
-	gin "github.com/gin-gonic/gin"
+	server "github.com/google-project-01/internal/main_server"
 )
 
 func main() {
-	router := gin.Default()
 
-	router.Use(static.Serve("/", static.LocalFile("../../web/show-movies/dist/apps/show-movies/", true)))
-
-	router.NoRoute(func(c *gin.Context) {
-		c.Redirect(301, "/")
-	})
+	router := server.SetupRouter()
 
 	srv := &http.Server{
 		Addr:    ":8080",

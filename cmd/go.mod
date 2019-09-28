@@ -1,4 +1,4 @@
-module github.com/jasper22/google-project-01/backend/server
+module github.com/jasper22/google-project-01
 
 go 1.12
 
