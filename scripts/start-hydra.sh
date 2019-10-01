@@ -10,5 +10,5 @@ then
 else
     echo "Hydra will start up for quick-dev.co.il domain"
     echo "with configuration file from /configs/hydra-config.yaml"
-    ../internal/hydra/hydra serve all --config ../configs/hydra-config.yaml
+    ./internal/hydra/hydra serve all --config ./configs/hydra-config.yaml
 fi
