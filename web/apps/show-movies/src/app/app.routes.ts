@@ -6,7 +6,10 @@ import {
   DownloadsComponent,
   AboutComponent,
   UserPreferencesComponent,
-  LogOutComponent
+  LogOutComponent,
+  LoginComponent,
+  ConsentComponent,
+  AuthErrorComponent
 } from '@show-movies/ui'
 
  export const AppRoutes: Routes = [
@@ -27,12 +30,28 @@ import {
     component: UserPreferencesComponent
   },
   {
-    path: 'log-out',
+    path: 'logout',
     component: LogOutComponent
   },
-  { path: '',
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'consent',
+    component: ConsentComponent
+  },
+  {
+    path: 'auth_error',
+    component: AuthErrorComponent
+  },
+  {
+    path: '',
     redirectTo: '/dashboard',
     pathMatch: 'full'
   },
-  { path: '**', component: PageNotFoundComponent }
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  }
 ];

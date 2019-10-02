@@ -1,0 +1,38 @@
+{
+	"folders": [
+		{
+			"path": "cmd"
+		},
+		{
+			"path": "configs"
+		},
+		{
+			"path": "internal"
+		},
+		{
+			"path": "deployments"
+		}
+	],
+	"settings": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/node_modules": true,
+			"**/dist" : true
+	},
+	"launch": {
+		"configurations": [{
+			"name": "Launch MainServer and Hydra",
+			"type": "go",
+			"preLaunchTask": "StartHydra",
+			"request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder:cmd}/main-server.go",
+            "env": {},
+            "args": []
+		}],
+		"compounds": []
+	}
+}

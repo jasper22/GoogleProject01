@@ -1,0 +1,13 @@
+./hydra clients create \
+--endpoint https://quick-dev.co.il:4445 \
+--id some_id \
+--secret some_secret \
+--grant-types authorization_code,refresh_token \
+--response-types code \
+--scope openid,offline \
+--skip-tls-verify
+
+./hydra clients create \
+--endpoint https://quick-dev.co.il:4445 \
+--token-endpoint-auth-method none \
+--skip-tls-verify
