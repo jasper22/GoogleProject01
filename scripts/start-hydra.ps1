@@ -1,3 +1,6 @@
+#!/usr/bin/pwsh-preview
+# Shebang line for Powershell v7.0.0-preview.4
+
 $hydraProcess = Get-Process -Name "hydra" -ErrorAction SilentlyContinue
 if ($hydraProcess) {
     # try gracefully first
