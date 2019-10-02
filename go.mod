@@ -7,5 +7,6 @@ require (
 	github.com/gin-gonic/gin v1.4.0
 	github.com/ory/hydra v1.0.5 // indirect
 	github.com/ory/x v0.0.76 // indirect
+	github.com/sirupsen/logrus v1.4.2
 	golang.org/x/tools/gopls v0.1.7 // indirect
 )
