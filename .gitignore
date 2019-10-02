@@ -42,3 +42,4 @@ yarn-error.log
 internal/hydra
 cmd/main
 cmd/main-server.exe
+cmd/cmd.exe

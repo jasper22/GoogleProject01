@@ -15,9 +15,8 @@ var (
 	localFilesFolder = filepath.Clean(currentFolder + "../../web/dist/apps/show-movies/")
 )
 
-/*
-* Function will return gin Engine with routes
- */
+//
+// SetupRouter is a function that will return gin Engine with routes
 func SetupRouter() *gin.Engine {
 	router := gin.Default()
 
@@ -26,7 +25,7 @@ func SetupRouter() *gin.Engine {
 
 	globalAPI := router.Group("/api/v1")
 	{
-		globalAPI.Use(auth.AuthMiddleware())
+		globalAPI.Use(auth.Middleware())
 
 		controllers.DashboardController(globalAPI)
 	}
