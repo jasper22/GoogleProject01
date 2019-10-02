@@ -2,9 +2,12 @@ package main
 
 import (
 	"context"
+	"flag"
+	"fmt"
 	"net/http"
 	"os"
 	"os/signal"
+	"path/filepath"
 	"syscall"
 	"time"
 
@@ -14,11 +17,22 @@ import (
 )
 
 var logger *log.Entry
+var pathToAngular string
+var serverHost string
+var serverPort int
 
 //
 // This function should initialize before anything else
 // Actually it setup internal logger
 func init() {
+
+	var currentFolder, _ = os.Getwd()
+	localFilesFolder := filepath.Clean(currentFolder + "../../web/dist/apps/show-movies/")
+
+	flag.StringVar(&pathToAngular, "source", localFilesFolder, "Full path to Angular compiled files folder")
+	flag.StringVar(&serverHost, "host", "localhost", "Host address (default 'localhost')")
+	flag.IntVar(&serverPort, "port", 8080, "Port to listen on (default 8080)")
+
 	// Log as JSON instead of the default ASCII formatter.
 	log.SetFormatter(&log.JSONFormatter{})
 
@@ -30,10 +44,17 @@ func init() {
 // Main entrance function in application
 func main() {
 
-	router := server.SetupRouter()
+	flag.Parse()
+
+	if pathToAngular == "" {
+		flag.PrintDefaults()
+		return
+	}
+
+	router := server.SetupRouter(pathToAngular)
 
 	srv := &http.Server{
-		Addr:    ":8080",
+		Addr:    fmt.Sprintf("%s:%v", serverHost, serverPort),
 		Handler: router,
 	}
 
