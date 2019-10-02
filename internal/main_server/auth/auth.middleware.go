@@ -2,8 +2,13 @@
 package auth
 
 import (
+	"bytes"
+	"errors"
 	"net/http"
 	"strings"
+	"time"
+
+	"encoding/json"
 
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
@@ -69,4 +74,103 @@ func Middleware() gin.HandlerFunc {
 		// Everything is ok
 		c.Next()
 	}
+}
+
+//
+// Function will validate provided 'token' with Hydra
+// If token is not exist or not accessible or has any other error then 'error' will be returned
+// otherwise 'nil' will be returned if everything is ok
+// https://www.ory.sh/docs/hydra/sdk/api#introspect-oauth2-tokens
+func tokenValidate(token string) error {
+
+	const hydraURL = "http://localhost:4444/oauth2/introspect"
+
+	requestBody, err := buildBody(token)
+	if err != nil {
+		return err
+	}
+
+	request, err := buildHydraRequest(hydraURL, requestBody)
+	if err != nil {
+		return err
+	}
+
+	client := buildClient()
+
+	result, err := getResult(client, request)
+
+	if err != nil {
+		return err
+	}
+
+	return validateResult(result)
+}
+
+func buildBody(token string) ([]byte, error) {
+
+	if token == "" {
+		return nil, errors.New("Token could not be null or empty")
+	}
+
+	requestbody, err := json.Marshal(map[string]string{
+		"token": token,
+	})
+
+	if err != nil {
+		const errMessage = "Can not serialize token value in HTTP/POST request for Hydra"
+		logger.Fatal(errMessage)
+		return nil, errors.New(errMessage)
+	}
+
+	return requestbody, nil
+}
+
+func buildHydraRequest(hydraURL string, requestBody []byte) (*http.Request, error) {
+
+	request, err := http.NewRequest("POST", hydraURL, bytes.NewBuffer(requestBody))
+
+	if err != nil {
+		errMessage := "Can not create HTTP/POST request to Hydra server at: " + hydraURL
+		logger.Fatal(errMessage)
+		return nil, errors.New(errMessage)
+	}
+
+	request.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	request.Header.Set("Accept", "application/json")
+
+	return request, nil
+}
+
+func buildClient() http.Client {
+	const timeout = time.Duration(5 * time.Second)
+
+	return buildClientWithTimeout(timeout)
+}
+
+func buildClientWithTimeout(timeout time.Duration) http.Client {
+	client := http.Client{
+		Timeout: timeout,
+	}
+
+	return client
+}
+
+func getResult(client http.Client, request *http.Request) (map[string]string, error) {
+	response, err := client.Do(request)
+
+	if err != nil {
+		const errMessage = "Can not make HTTP/POST request to Hydra URL"
+		logger.Error(errMessage, err)
+		return nil, err
+	}
+
+	var result = map[string]string{}
+
+	json.NewDecoder(response.Body).Decode(&result)
+
+	return result, nil
+}
+
+func validateResult(body map[string]string) error {
+	return nil
 }
