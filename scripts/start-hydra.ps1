@@ -1,4 +1,4 @@
-#!/usr/bin/pwsh-preview
+#!/usr/bin/env pwsh
 # Shebang line for Powershell v7.0.0-preview.4
 
 $hydraProcess = Get-Process -Name "hydra" -ErrorAction SilentlyContinue
