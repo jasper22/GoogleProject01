@@ -15,8 +15,8 @@ serve:
     # The interface or unix socket ORY Hydra should listen and handle public API requests on.
     # Use the prefix "unix:" to specify a path to a unix socket.
     # Leave empty to listen on all interfaces.
-    # host: localhost # leave this out or empty to listen on all devices which is the default
-    host: quick-dev.co.il
+    host: localhost # leave this out or empty to listen on all devices which is the default
+    # host: quick-dev.co.il
     # host: unix:/path/to/socket
 
     # cors configures Cross Origin Resource Sharing for public endpoints.
@@ -72,8 +72,8 @@ serve:
     # The interface or unix socket ORY Hydra should listen and handle administrative API requests on.
     # Use the prefix "unix:" to specify a path to a unix socket.
     # Leave empty to listen on all interfaces.
-    # host: localhost # leave this out or empty to listen on all devices which is the default
-    host: quick-dev.co.il
+    host: localhost # leave this out or empty to listen on all devices which is the default
+    # host: quick-dev.co.il
 
     # host: unix:/path/to/socket
 
@@ -242,14 +242,16 @@ urls:
     # This value will be used as the "issuer" in access and ID tokens. It must be
     # specified and using HTTPS protocol, unless --dangerous-force-http is set. This should typically be equal
     # to the public value.
-    issuer: https://quick-dev.co.il:4444/
+    # issuer: https://quick-dev.co.il:4444/
+    issuer: https://localhost:4444/
 
     # This is the base location of the public endpoints of your ORY Hydra installation. This should typically be equal
     # to the issuer value. If left unspecified, it falls back to the issuer value.
-    public: https://quick-dev.co.il:4444/
+    # public: https://quick-dev.co.il:4444/
+    public: https://localhost:4444/
 
   # Sets the login endpoint of the User Login & Consent flow. Defaults to an internal fallback URL.
-  login: https://localhost:8080/login
+  login: http://localhost:8080/login
   # Sets the consent endpoint of the User Login & Consent flow. Defaults to an internal fallback URL.
   consent: https://localhost:8080/consent
   # Sets the logout endpoint. Defaults to an internal fallback URL.
