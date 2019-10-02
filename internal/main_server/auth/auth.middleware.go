@@ -70,9 +70,20 @@ func Middleware() gin.HandlerFunc {
 		logger.Info("Token is:" + jwtToken)
 
 		// Valdate with Hydra
+		err := tokenValidate(jwtToken)
 
-		// Everything is ok
-		c.Next()
+		if err == nil {
+			logger.Info("Token sucsesfully validated")
+
+			// Everything is ok
+			c.Next()
+		} else {
+			logger.Error("Could not validate token ! Not set ? ", err)
+
+			c.AbortWithStatus(http.StatusUnauthorized)
+			return
+		}
+
 	}
 }
 
@@ -155,7 +166,7 @@ func buildClientWithTimeout(timeout time.Duration) http.Client {
 	return client
 }
 
-func getResult(client http.Client, request *http.Request) (map[string]string, error) {
+func getResult(client http.Client, request *http.Request) (*http.Response, error) {
 	response, err := client.Do(request)
 
 	if err != nil {
@@ -164,13 +175,24 @@ func getResult(client http.Client, request *http.Request) (map[string]string, er
 		return nil, err
 	}
 
+	return response, nil
+}
+
+func validateResult(response *http.Response) error {
+
+	if response.StatusCode != 200 {
+		logger.Error("Response code returned from Hydra is: " + response.Status)
+		return errors.New("Token does not exist")
+	}
+
 	var result = map[string]string{}
 
 	json.NewDecoder(response.Body).Decode(&result)
 
-	return result, nil
-}
+	if response.Body == nil {
+		// No response or may be response status was send in header
+		return errors.New("Bad response from Hydra")
+	}
 
-func validateResult(body map[string]string) error {
 	return nil
 }
