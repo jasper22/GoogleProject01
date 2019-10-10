@@ -73,7 +73,7 @@ func Middleware() gin.HandlerFunc {
 		err := tokenValidate(jwtToken)
 
 		if err == nil {
-			logger.Info("Token sucsesfully validated")
+			logger.Info("Token successfully validated")
 
 			// Everything is ok
 			c.Next()

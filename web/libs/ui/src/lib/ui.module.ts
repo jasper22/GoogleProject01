@@ -14,6 +14,8 @@ import { LoginComponent } from './login/login.component';
 import { ConsentComponent } from './consent/consent.component';
 import { AuthErrorComponent } from './auth-error/auth-error.component';
 
+import {AlertType } from './top-alert/alert-types.enum'
+
 @NgModule({
   imports: [
             CommonModule,

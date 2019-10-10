@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertType } from 'libs/ui/src/lib/top-alert/alert-types.enum';
+import { AlertType } from '@show-movies/ui';
 
 @Component({
   selector: 'show-movies-root',

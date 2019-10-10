@@ -11,15 +11,18 @@ import {
   ConsentComponent,
   AuthErrorComponent
 } from '@show-movies/ui'
+import { AuthGuard } from './auth.guard';
 
  export const AppRoutes: Routes = [
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'downloads',
-    component: DownloadsComponent
+    component: DownloadsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'about',
@@ -27,7 +30,8 @@ import {
   },
   {
     path: 'user-preferences',
-    component: UserPreferencesComponent
+    component: UserPreferencesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'logout',

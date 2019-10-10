@@ -8,6 +8,6 @@ export * from './lib/login/login.component';
 export * from './lib/consent/consent.component';
 export * from './lib/auth-error/auth-error.component';
 
-export * from './lib/top-alert/top-alert.component';
+export { AlertType } from './lib/top-alert/alert-types.enum'
 
 export * from './lib/ui.module';
