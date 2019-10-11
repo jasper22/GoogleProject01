@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'show-movies-login',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  loginForm = this.fb.group({
+    usernameCtrl: ['', Validators.required],
+    passwordCtrl: [''],
+    rememberMe: ['']
+  });
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
   }
 
+  onLogin() {
+    
+  }
 }

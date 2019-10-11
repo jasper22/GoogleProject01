@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class="login-wrapper">
+    <form class="login" formGroup="loginForm" (ngSubmit)=onLogin()>
+        <section class="title">
+            <h3 class="welcome">Welcome to</h3>
+            Show movies
+            <h5 class="hint">Use your Show Movies ID to sign in or create one now</h5>
+        </section>
+        <div class="login-group">
+            <clr-input-container>
+                <label class="clr-sr-only">Username</label>
+                <input type="text" name="username" clrInput placeholder="Username" formControlName="usernameCtrl"/>
+            </clr-input-container>
+            <clr-password-container>
+                <label class="clr-sr-only">Password</label>
+                <input type="password" name="password" clrPassword placeholder="Password" formControlName="passwordCtrl"/>
+            </clr-password-container>
+            <clr-checkbox-wrapper>
+                <label>Remember me</label>
+                <input type="checkbox" name="rememberMe" clrCheckbox formControlName="rememberMe"/>
+            </clr-checkbox-wrapper>
+            <div class="error active">
+                Invalid user name or password
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid" >NEXT</button>
+        </div>
+    </form>
+</div>

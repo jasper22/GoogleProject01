@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ClarityModule, ClrIconModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +20,8 @@ import {AlertType } from './top-alert/alert-types.enum'
 @NgModule({
   imports: [
             CommonModule,
+            FormsModule,
+            ReactiveFormsModule,
             ClarityModule,
             ClrIconModule,
             BrowserAnimationsModule
