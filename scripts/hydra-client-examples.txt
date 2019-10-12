@@ -11,3 +11,7 @@
 --endpoint https://quick-dev.co.il:4445 \
 --token-endpoint-auth-method none \
 --skip-tls-verify
+
+https://localhost:4444/oauth2/auth?client_id=some_idscope=foo+bar&response_type=code&redirect_uri=http://localhost:4200/dashboard
+
+List of clients:    https://localhost:4445/clients
