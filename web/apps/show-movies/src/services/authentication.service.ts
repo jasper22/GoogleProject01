@@ -1,12 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { Oauth2Service } from './oauth2.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  constructor() { }
+  constructor(private oauthService: Oauth2Service, private httpClient: HttpClient) {
+
+  }
+
+  tryToLogin(oauthServerBaseAddress: string, client_id: string) {
+    const targetUrl = this.oauthService.getLoginPath(oauthServerBaseAddress, client_id);
+
+    // This call will trigger OAuth2 client authentication and everything
+    this.httpClient.get(targetUrl);
+  }
 
   /*
   // Function will return authorization (JWT) token if any
