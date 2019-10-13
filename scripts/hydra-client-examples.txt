@@ -17,6 +17,6 @@ https://localhost:4445/clients
 
 # Request autentication
 #------------------------------------------------------
-https://localhost:4444/oauth2/auth?client_id=some_id&scope=torrents_status%20upload_new&response_type=code&redirect_uri=http://localhost:4200/dashboard&state=0987654321
+https://localhost:4444/oauth2/auth?client_id=aclient&scope=torrents_status%20upload_new&response_type=code&redirect_uri=http://localhost:4200&state=0987654321
 
 
