@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ErrorDetails } from './error-details';
+
 
 @Component({
   selector: 'show-movies-auth-error',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthErrorComponent implements OnInit {
 
-  constructor() { }
+  errorDetails:ErrorDetails;
+
+  constructor(private activeRoute:ActivatedRoute) { 
+
+  }
 
   ngOnInit() {
+    this.activeRoute
+            .queryParams
+            .subscribe(param => {
+              this.errorDetails = <ErrorDetails> JSON.parse(JSON.stringify(param));
+              console.log(`Error details is: ${this.errorDetails.error}`);
+              console.log(`Error details is: ${this.errorDetails.error_description}`);
+            });
   }
 
 }
