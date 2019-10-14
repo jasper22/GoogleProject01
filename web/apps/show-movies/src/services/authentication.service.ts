@@ -23,7 +23,7 @@ export class AuthenticationService {
   // Function will return authorization (JWT) token if any
   */
   getAuthToken() : string {
-    if (localStorage.length == 0) {
+    if (localStorage.length === 0) {
       return "";
     }
 

@@ -25,5 +25,6 @@ export class AuthGuard implements CanActivate {
       // Token still not set -> redirect to /login
       // this.router.navigate(["/login"], {queryParams: {returnUrl: state.url}});
       this.authService.tryToLogin(environment.hydra_url, environment.oauth_client_id);
+      return false;
     }
 }
