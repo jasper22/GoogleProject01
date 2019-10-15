@@ -251,16 +251,16 @@ urls:
     public: https://localhost:4444/
 
   # Sets the login endpoint of the User Login & Consent flow. Defaults to an internal fallback URL.
-  login: http://localhost:8080/login
+  login: http://localhost:4200/login
   # Sets the consent endpoint of the User Login & Consent flow. Defaults to an internal fallback URL.
-  consent: https://localhost:8080/consent
+  consent: https://localhost:4200/consent
   # Sets the logout endpoint. Defaults to an internal fallback URL.
-  logout: https://localhost:8080/logout
+  logout: https://localhost:4200/logout
   # Sets the error endpoint. The error ui will be shown when an OAuth2 error occurs that which can not be sent back
   # to the client. Defaults to an internal fallback URL.
-  error: https://localhost:8080/auth_error
+  error: https://localhost:4200/auth_error
   # When a user agent requests to logout, it will be redirected to this url afterwards per default.
-  post_logout_redirect: https://localhost:8080/logout-successful
+  post_logout_redirect: https://localhost:4200/logout-successful
 
 strategies:
   scope: DEPRECATED_HIERARCHICAL_SCOPE_STRATEGY
