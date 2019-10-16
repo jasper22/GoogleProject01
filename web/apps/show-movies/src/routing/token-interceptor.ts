@@ -30,6 +30,9 @@ export class TokenInterceptor implements HttpInterceptor {
                 return this.handle401Error(request, next);
               case 400:
                 return <any>this.authService.logout();
+              default:
+                // All other errors
+                return throwError(err);
             }
           } else {
             return throwError(err);
