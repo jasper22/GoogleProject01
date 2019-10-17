@@ -1,3 +1,6 @@
 [submodule "internal/hydra"]
 	path = internal/hydra
 	url = https://github.com/ory/hydra.git
+[submodule ".\\internal\\bbolt"]
+	path = .\\internal\\bbolt
+	url = https://github.com/etcd-io/bbolt.git
