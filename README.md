@@ -111,6 +111,7 @@ TODO
 * [Docker](http://docker.com)
 * [Project layout](https://github.com/golang-standards/project-layout)
 * [Hydra](https://github.com/ory/hydra)
+* [BBolt](https://github.com/etcd-io/bbolt.git)
 
 ## Contributing
 
