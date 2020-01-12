@@ -1,16 +1,21 @@
-import { Injectable } from '@angular/core';
+import { Injectable,  Inject } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { Oauth2Service } from './oauth2.service';
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { retry, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { HttpHeaders } from '@angular/common/http';
+import { WINDOW } from '@show-movies/ui';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  constructor(private oauthService: Oauth2Service, private httpClient: HttpClient, private router: Router) {
+  constructor(private oauthService: Oauth2Service,
+              private httpClient: HttpClient,
+              private router: Router,
+              @Inject(WINDOW) private window: Window) {
 
   }
 
@@ -18,7 +23,15 @@ export class AuthenticationService {
     const targetUrl = this.oauthService.getLoginPath(oauthServerBaseAddress, client_id);
 
     // This call will trigger OAuth2 client authentication and everything
-    this.httpClient.get(targetUrl)
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Origin': window.origin
+      })};
+
+
+    this.httpClient.get(targetUrl, httpOptions)
                     .pipe(
                       catchError(err => this.handleError(err))
                     )

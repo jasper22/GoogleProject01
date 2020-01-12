@@ -11,5 +11,6 @@ if ($hydraProcess) {
     $hydraProcess | Stop-Process -Force
   }
 } else {
-    Start-Process -FilePath ".\internal\hydra\hydra.exe" -ArgumentList "serve", "all", "--config .\configs\hydra-config.yaml", "--dangerous-allow-insecure-redirect-urls strings", "--dangerous-force-http"
+	$env:CORS_DEBUG=1;
+    Start-Process -FilePath ".\internal\hydra\hydra.exe" -ArgumentList "serve", "all", "--config .\configs\hydra-config.yaml", "--dangerous-force-http"
 }
