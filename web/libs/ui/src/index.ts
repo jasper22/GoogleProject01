@@ -7,6 +7,7 @@ export * from './lib/log-out/log-out.component';
 export * from './lib/login/login.component';
 export * from './lib/consent/consent.component';
 export * from './lib/auth-error/auth-error.component';
+export { WINDOW } from './lib/window-provider';
 
 export { AlertType } from './lib/top-alert/alert-types.enum'
 

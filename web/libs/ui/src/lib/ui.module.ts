@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { WINDOW_PROVIDERS } from './window-provider';
+
 import { ClarityModule, ClrIconModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -51,6 +53,9 @@ import {AlertType } from './top-alert/alert-types.enum'
               LoginComponent,
               ConsentComponent,
               AuthErrorComponent
+  ],
+  providers: [
+    WINDOW_PROVIDERS
   ]
 })
 export class UiModule {}

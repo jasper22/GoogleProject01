@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  hydra_url: 'https://localhost:4444/oauth2/auth',
+  hydra_url: 'http://localhost:4444/oauth2/auth',
   oauth_client_id: 'aclient'
 };
 
