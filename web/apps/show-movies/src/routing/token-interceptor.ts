@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import {HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpSentEvent, HttpHeaderResponse, HttpProgressEvent, HttpResponse, HttpUserEvent, HttpErrorResponse } from '@angular/common/http';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { switchMap, catchError,finalize, filter, take } from 'rxjs/operators';
 import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
+import { WINDOW } from '@show-movies/ui';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,11 @@ export class TokenInterceptor implements HttpInterceptor {
 
   isRefreshingToken: boolean = false;
   tokenSubject: BehaviorSubject<string> = new BehaviorSubject<string>(null);
+  partialLoginUrl: string = "login?login_challenge="
 
-  constructor(private authService: AuthenticationService, private router: Router){
+  constructor(private authService: AuthenticationService,
+              private router: Router,
+              @Inject(WINDOW) private window: Window){
 
   }
 
@@ -28,8 +32,20 @@ export class TokenInterceptor implements HttpInterceptor {
             switch ((<HttpErrorResponse>err).status) {
               case 401:
                 return this.handle401Error(request, next);
+
               case 400:
                 return <any>this.authService.logout();
+
+              case 404:
+                // When just authorizing to OAuth/Hydra we receive '302 Found' to redirect to new url (ex: https:/xxxxxxxxx/login?login_challenge=ccccccc)
+                // For some reason Angular can not handle this redirect before browser so it results in 404 Not Found
+                // Here we catch this error and properly redirect it to 'login' page
+                if (err.url.indexOf(this.partialLoginUrl) >= 0){
+                  window.location.href = err.url;
+                  return null;
+                }
+                break;
+
               default:
                 // All other errors
                 return throwError(err);

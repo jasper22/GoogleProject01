@@ -20,15 +20,23 @@ export class AuthenticationService {
   }
 
   tryToLogin(oauthServerBaseAddress: string, client_id: string): void {
+
     const targetUrl = this.oauthService.getLoginPath(oauthServerBaseAddress, client_id);
 
     // This call will trigger OAuth2 client authentication and everything
 
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        'Origin': window.origin
+        'Content-Type':  'application/json'
+        // 'Access-Control-Allow-Origin' : window.origin,
       })};
+
+      // 'Content-Type':  'text/plain',
+      // 'Access-Control-Allow-Origin' : window.origin,
+      // 'Authorization': "Basic Zm9vLTQ6YmFy",
+      // 'Origin': window.origin
+
+      //const targetUrl = "http://localhost:4445/clients";
 
 
     this.httpClient.get(targetUrl, httpOptions)
